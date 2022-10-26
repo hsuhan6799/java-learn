@@ -10,6 +10,8 @@
 </style>
 
 <body>
+<input type="text" id="name">
+<input type="button"  value="查询" onclick="search()"></input>
 <table style="border: 1px solid red;">
     <thead>
     <tr>
@@ -29,4 +31,10 @@
     </tbody>
 </table>
 </body>
+<script>
+    function search(){
+    var name = document.getElementById("name");
+    window.location.href = "?name=" + name.value;
+        }
+</script>
 </html>

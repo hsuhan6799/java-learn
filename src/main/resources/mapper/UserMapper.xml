@@ -3,8 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xh.fristWebProject.mapper.UserMapper">
-    <select id="getUserByUsername" resultMap="getUsers">
+    <select id="getUserByUsername" resultMap="getUsers" parameterType="string">
         select * from user
+        <if test="name != null and name != ''">where user_name = #{name}</if>
     </select>
 
     <resultMap id="getUsers" type="com.xh.fristWebProject.entity.User">
